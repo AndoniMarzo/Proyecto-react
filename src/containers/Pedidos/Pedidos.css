@@ -1,0 +1,11 @@
+.PedidosLista{
+    width: 80%;
+    margin: auto;
+}
+
+.PedidosTexto{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}

@@ -1,0 +1,22 @@
+.Cabecera {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+.Body {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+.Footer {
+    margin: auto;
+    padding-top: 10px;
+    height: 80px;
+    width: 80%;
+    text-align: center;
+    background-color: darkgray;
+}

@@ -1,0 +1,30 @@
+.HomeUsuario{
+    margin: auto;
+    font-size: 18px;
+}
+
+.HomeTotal {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.HomeBoton {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.HomeBoton p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.HomeBoton Button{
+    font-size: 16px;
+    font-weight: bold;
+    width: 170px;
+}

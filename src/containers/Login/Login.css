@@ -1,0 +1,20 @@
+.Login {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.Login label {
+    font-size: 20px;
+}
+
+.LoginBoton{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.LoginBoton Button{
+    font-size: 16px;
+    font-weight: bold;
+    width: 170px;
+}
