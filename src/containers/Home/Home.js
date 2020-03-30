@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Producto from '../../components/Producto/Producto';
 
 import './Home.css';
+import { Usuario } from '../Main/Main'
 
 class Home extends React.Component {
     constructor(props) {
@@ -67,18 +68,8 @@ class Home extends React.Component {
             this.setState({ comprobarEstado: false });
         }
 
-        let estado = []
         let productos = <p style={{ textAlign: 'center' }}>Cargando productos...</p>;
         let total = 0;
-
-        const token = JSON.parse(localStorage.getItem('token'));
-        if (token != null) {
-            estado =
-                <div className="HomeUsuario">
-                     Bienvenido: {token.email}
-                </div>
-
-        }
 
         productos = this.state.productos.map(productos => {
             return <Producto
@@ -94,9 +85,13 @@ class Home extends React.Component {
 
         return (
             <>
-                <Row>
-                    {estado}
-                </Row>
+                <Usuario.Consumer>
+                    {({email}) => (
+                        <Row>
+                            {email}
+                        </Row>
+                    )}
+                </Usuario.Consumer>
                 <Row>
                     {productos}
                 </Row>

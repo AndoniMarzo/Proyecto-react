@@ -8,6 +8,8 @@ import Finalizar from '../Finalizar/Finalizar';
 import Pedidos from '../Pedidos/Pedidos';
 import Login from '../Login/Login'
 
+import { Usuario } from '../Main/Main'
+
 class Body extends React.Component {
     constructor(props) {
         super(props);
@@ -17,7 +19,7 @@ class Body extends React.Component {
             total: 0
         };
     }
-    
+
     setAuthentication = (auth, data) => {
         this.setState({ auth: auth });
         this.setState({ authData: data });
@@ -30,6 +32,22 @@ class Body extends React.Component {
     }
 
     render() {
+        const token = JSON.parse(localStorage.getItem('token'));
+        let valor = null
+        if (token != null) {
+            valor = {
+                email: <div className="HomeUsuario">
+                    Bienvenido {token.email}!
+                </div>
+            }
+            console.log(valor)
+        } else {
+            valor = {
+                email: null
+            }
+            console.log(valor)
+        }
+
         return (
             <>
                 <Redirect
@@ -38,7 +56,11 @@ class Body extends React.Component {
                 <Switch>
                     <Route
                         path="/home"
-                        render={(props) => <Home {...props} productos={this.state.productos} carrito={this.state.carrito} actualizarEstado={this.actualizarEstado} />} />
+                        render={(props) =>
+                            <Usuario.Provider value={valor}>
+                                <Home {...props} productos={this.state.productos} carrito={this.state.carrito} actualizarEstado={this.actualizarEstado} />
+                            </Usuario.Provider>
+                        } />
                     <Route
                         path="/confirmacion"
                         render={(props) => <Confirmacion {...props} productos={this.state.productos} carrito={this.state.carrito} total={this.state.total} />} />

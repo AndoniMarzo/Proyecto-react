@@ -7,6 +7,10 @@ import Footer from '../../components/Footer/Footer'
 
 import './Main.css'
 
+export const Usuario = React.createContext({
+  email: null
+});
+
 class Main extends React.Component {
   render() {
     return (

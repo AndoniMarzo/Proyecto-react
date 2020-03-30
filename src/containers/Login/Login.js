@@ -31,6 +31,7 @@ class Login extends React.Component {
                 console.log(response)
                 localStorage.setItem('token', JSON.stringify(response.data));
                 this.props.setAuthentication(true, response.data);
+                window.location.reload(false);
             })
             .catch(err => {
                 console.log(err);
@@ -50,6 +51,7 @@ class Login extends React.Component {
                 console.log(response)
                 localStorage.setItem('token', JSON.stringify(response.data));
                 this.props.setAuthentication(true, response.data);
+                window.location.reload(false);
             })
             .catch(err => {
                 console.log(err);

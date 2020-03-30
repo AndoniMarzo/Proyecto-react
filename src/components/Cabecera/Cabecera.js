@@ -8,6 +8,7 @@ class Cabecera extends React.Component {
 
     logoutUser = () => {
         localStorage.removeItem('token');
+        window.location.reload(false);
     }
 
     render() {
